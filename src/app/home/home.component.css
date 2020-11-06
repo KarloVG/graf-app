@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Passion+One&display=swap');
+
+.img{
+    background-image: url('/assets/images/DSC_0326.jpg');
+    background-size: cover;
+    background-position: center center;
+}
+.jumbotron{
+    padding-top: 350px;
+    background: none;
+    color: whitesmoke;  
+}
+
+.display-4{
+    font-size: 120px;
+    color: whitesmoke;
+    font-family: 'Passion One', cursive;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+p{
+    display: flex;
+    justify-content: center;
+}
+
+a.btn.btn-primary.btn-lg{
+    display: flex;
+    justify-content: center;
+}

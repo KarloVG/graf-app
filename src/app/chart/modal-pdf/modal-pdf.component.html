@@ -1,0 +1,13 @@
+<div class="modalPdf">
+  <div class="modal-header">
+    <h1 class="modal-title" id="modal-basic-title">Player PDF</h1>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+<div class="container">
+    <pdf-viewer [src]="pdfSource"
+                [original-size]="false"
+    ></pdf-viewer>
+  </div>
+</div>

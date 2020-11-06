@@ -1,0 +1,48 @@
+/* .list-group{
+    flex-direction: column;
+    padding-top: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.list-group-item.list-group-item-action.active{
+    font-size: 30px;
+}
+.list-group-item.list-group-item-action{
+    font-size: 18px;
+}
+
+.table.table-bordered{
+    background-color: blanchedalmond;
+}
+.table{
+    padding-top: 20px;
+    padding-right: 40px;
+    padding-left: 40px;
+    width: 500px;
+}
+
+h2{
+    padding-top: 10px;
+    font-size: 35px;
+}
+
+.custom-control.custom-checkbox{
+    font-size: 20px;
+} */
+
+table{
+    width: 80%;
+}
+th{
+    font-size: 25px;
+}
+td{
+    font-size: 20px;
+}
+.tdTable{
+    padding-left:300px;
+    padding-top: 200px;
+}
+.editButton{
+    background-color:#f5e642;
+}

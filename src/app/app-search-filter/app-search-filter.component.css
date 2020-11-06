@@ -1,0 +1,18 @@
+.ng-select{
+    padding-right: 1720px;
+    padding-top: 20px;
+    padding-left: 50px;
+    padding-bottom: 0;
+    font-size: 18px;
+}
+.ng-option{
+    padding-right: 1720px;
+    padding-top: 20px;
+    padding-left: 50px;
+    padding-bottom: 0;
+    font-size: 18px;
+}
+.form-inline.waves-light{
+    padding-left: 50px;
+    padding-top: 20px;
+}

@@ -1,0 +1,12 @@
+<div calss="dropdownPlayer">
+    <ng-select [(ngModel)]='selectedPlayer' placeholder="Players by age" (change)="selectAge($event)">
+        <ng-option *ngFor="let search of searchPlayer" [value]="search">{{search.ageFrom}} - {{search.ageTo}}</ng-option>
+    </ng-select>
+    <form class="form-inline waves-light" mdbWavesEffect>
+        <div class="md-form mt-0">
+          <input type='text' placeholder="Search player" 
+             (keyup)="filter($event)"/>
+        </div>
+      </form>
+    <!-- ovdje ide input polje sa (keypress) ili (keyup) ili (change) , pošalji tu vrijednost u chart komponentu i tamo filtriraj polja-->
+</div>

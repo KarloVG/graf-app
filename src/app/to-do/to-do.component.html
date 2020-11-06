@@ -1,0 +1,88 @@
+<!-- <div class="tableToDo">
+  <div class="list-group">
+    <div>
+      <button type="button" class="list-group-item list-group-item-action active" aria-current="true" disabled>
+        To do list
+      </button>
+    </div>
+    <ul class="list-unstyled" >
+      <li *ngFor="let toDo of toDos">
+      <button type="button" class="list-group-item list-group-item-action">
+        {{toDo.text}}
+      </button>
+    </li>
+      <button type="button" class="list-group-item list-group-item-action">
+        Morbi leo risus
+      </button>
+      <button type="button" class="list-group-item list-group-item-action">
+        Porta ac consectetur ac
+      </button>
+      <button type="button" class="list-group-item list-group-item-action">
+        Vestibulum at eros
+      </button>
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-secondary"(click)="addOrEdit()">Dodaj</button>
+        <button type="button" class="btn btn-secondary">Uredi</button>
+        <button type="button" class="btn btn-secondary">Briši</button>
+      </div>
+    </ul>
+  </div>
+ -->
+ <div class="tdTable">
+ <table mat-table [dataSource]="toDos" class="mat-elevation-z8"> 
+
+  <!-- Checkbox Column -->
+  <ng-container matColumnDef="select">
+    <th mat-header-cell *matHeaderCellDef>
+      <mat-checkbox (change)="$event ? masterToggle() : null"
+                    [checked]="selection.hasValue() && isAllSelected()"
+                    [indeterminate]="selection.hasValue() && !isAllSelected()">
+      </mat-checkbox>
+    </th>
+    <td mat-cell *matCellDef="let row">
+      <mat-checkbox (click)="$event.stopPropagation()"
+                    (change)="$event ? selection.toggle(row) : null"
+                    [checked]="selection.isSelected(row)">
+      </mat-checkbox>
+    </td>
+  </ng-container>
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> No. </th>
+    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="text">
+    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.text}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="action">
+    <th mat-header-cell *matHeaderCellDef> Action </th>
+    <td mat-cell *matCellDef="let element" class="action-link" (click)="onEvent($event)"> 
+      <button mat-raised-button class="editButton"(click)="editOrDelete('edit',element)">Edit</button> | 
+      <button mat-raised-button color="warn" (click)="editOrDelete('delete',element)">Delete</button>  
+    </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <!-- <ng-container matColumnDef="weight">
+    <th mat-header-cell *matHeaderCellDef> Weight </th>
+    <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+  </ng-container> -->
+
+  <!-- Symbol Column -->
+  <!-- <ng-container matColumnDef="symbol">
+    <th mat-header-cell *matHeaderCellDef> Symbol </th>
+    <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+  </ng-container> -->
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+      (click)="selection.toggle(row)">
+  </tr>
+</table>
+<button mat-button  mat-flat-button color="primary">Add new</button>
+</div>

@@ -1,0 +1,24 @@
+<app-app-search-filter (ageEvent)="recievedAge($event)" 
+                       (search)='onValueChange($event)'>
+</app-app-search-filter>
+<div class="card-deck" fxLayout="row wrap">
+  <div class="card card-rotating" *ngFor="let player of players" fxFlex="15%">
+    <div class="front">
+    <img src='{{ "assets/images/" + player.imagePath + ".jpg" }}'
+      class="img-fluid img-thumbnail" alt="playerImages">
+    <div class="card-body">
+      <h1 class="card-title">{{player.name}}</h1>
+      <h2 class="card-title">Club: {{player.club}}</h2>
+      <h2 class="card-title">Nationality: {{player.nationality}}</h2>
+      <h2 class="card-title">Age: {{player.age}}</h2>
+      <h2 class="card-title">Price: {{player.price}}</h2>
+    </div>
+    <div class="card-footer">
+      <button mat-raised-button (click)="openModal(player)">Chart view</button>
+    </div>
+    <div class="card-footer">
+      <button mat-raised-button (click)="openModalPdf(player)">PDF view</button>
+    </div>
+  </div>
+  </div>
+</div>

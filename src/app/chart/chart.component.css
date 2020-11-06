@@ -1,0 +1,34 @@
+.container{
+    margin:0;
+    padding:0;
+    margin-left:250px;
+    color:whitesmoke  
+}
+.table.table-bordered{
+    color:whitesmoke;
+    background-color: black;
+}
+.img-fluid.img-thumbnail{
+    width: 400px;
+}
+.card-deck{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    padding-left: 50px;
+    padding-top: 50px;
+    padding-right: 50px;
+}
+.card.card-rotating{
+    margin-top: 16px;
+}
+h1{
+    font-size: 35px;
+}
+.mat-raised-button{
+    font-size: 20px;
+}
+.card-footer{
+    padding-left: 80px;
+}
