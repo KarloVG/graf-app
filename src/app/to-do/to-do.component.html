@@ -62,8 +62,8 @@
   <ng-container matColumnDef="action">
     <th mat-header-cell *matHeaderCellDef> Action </th>
     <td mat-cell *matCellDef="let element" class="action-link" (click)="onEvent($event)"> 
-      <button mat-raised-button class="editButton"(click)="editOrDelete('edit',element)">Edit</button> | 
-      <button mat-raised-button color="warn" (click)="editOrDelete('delete',element)">Delete</button>  
+      <button mat-raised-button class="editButton"(click)="editOrDelete('Edit',element)">Edit</button> | 
+      <button mat-raised-button color="warn" (click)="editOrDelete('Delete',element)">Delete</button>  
     </td>
   </ng-container>
 
@@ -84,5 +84,5 @@
       (click)="selection.toggle(row)">
   </tr>
 </table>
-<button mat-button  mat-flat-button color="primary">Add new</button>
+<button mat-button (click)="editOrDelete('Add', {})" mat-flat-button color="primary">Add new</button>
 </div>

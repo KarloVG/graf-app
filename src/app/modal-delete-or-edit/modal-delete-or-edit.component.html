@@ -22,13 +22,19 @@
       </div>
     </div>
   -->
-  <h1 mat-dialog-title>Favorite Animal</h1>
+  <div [formGroup]="textGroup">
+  <h1 mat-dialog-title><strong>{{action}}</strong></h1>
   <div mat-dialog-content>
-    My favorite animal is:
-    <ul>
-      <li>
-        <span *ngIf="row">&#10003;</span> Kurcina
-      </li>
-      
-    </ul>
+    <mat-form-field *ngIf ="action != 'Delete'; else elseTemplate">
+      <input placeholder="{{action}} Text" formControlName="text" required matInput [(ngModel)]="local_data.text">
+      <mat-error *ngIf="text.invalid">{{getErrorMessage()}}</mat-error> 
+    </mat-form-field>
+    <ng-template #elseTemplate>
+      Do you want to delete <b>{{local_data.text}}</b>?
+    </ng-template>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="doAction()">{{action}}</button>
+    <button mat-button (click)="closeDialog()" mat-flat-button color="warn">Cancel</button>
+  </div>
   </div>

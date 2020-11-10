@@ -51,6 +51,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     ToDoRoutingModule,
     HttpClientModule,
     InMemoryWebApiModule.forRoot(InMemoryDataService),

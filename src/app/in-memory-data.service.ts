@@ -15,6 +15,14 @@ export class InMemoryDataService implements InMemoryDbService {
     ];
     return {toDos};
   }
+  //     const ELEMENT_DATA: IToDo[] = [
+  //     { id:1, text: 'Dr Nice' },
+  //     { id:2, text: 'Narco' },
+  //     { id:3, text: 'Barco' },
+  //     { id:4, text: 'Jarco' }
+  //   ];
+  //   return {ELEMENT_DATA};
+  // }
 
   // Overrides the genId method to ensure that a hero always has an id.
   // If the heroes array is empty,
