@@ -13,6 +13,8 @@ export class ModalDeleteOrEditComponent implements OnInit {
 
   action: string;
   local_data:any;
+  color:'accent';
+  checked = false;
 
   textGroup: FormGroup;
 
@@ -30,7 +32,9 @@ export class ModalDeleteOrEditComponent implements OnInit {
       console.log(this.action)
     }
   }
-
+  changed(){
+    console.log(this.checked)
+  }
   closeDialog(){
     this.dialogRef.close({event:'Cancel'});
   }
@@ -39,7 +43,8 @@ export class ModalDeleteOrEditComponent implements OnInit {
 
     this.textGroup = this.formBuilder.group({
       id:[''],
-      text:['', Validators.required]
+      text:['', Validators.required],
+      isFinished:[false]
     });
   }
 

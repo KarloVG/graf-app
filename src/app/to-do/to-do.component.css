@@ -30,9 +30,21 @@ h2{
     font-size: 20px;
 } */
 
-table{
-    width: 80%;
+table {
+    width: 50%;
+  }
+
+.example-table-container{
+    padding-left: 70px;
 }
+
+th, td {
+    overflow: hidden;
+    width: 200px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
 th{
     font-size: 25px;
 }
@@ -40,9 +52,48 @@ td{
     font-size: 20px;
 }
 .tdTable{
-    padding-left:300px;
-    padding-top: 200px;
+    padding-left:70px;
+    padding-top: 60px;
 }
 .editButton{
     background-color:#f5e642;
+}
+.addButton{
+    background-color: rgb(64, 141, 64);
+}
+.header{
+    font-size: 50px;
+    padding-top: 80px;
+    padding-left: 70px;
+    color: white;
+    font-family: 'Righteous', cursive;
+}
+.header2{
+    font-size: 30px;
+    padding-left: 70px;
+    color: white;
+    font-family: 'Righteous', cursive;
+}
+.mat-cell{
+    padding:10px;
+}
+.mat-button{
+    font-size:17px;
+}
+.mat-raised-button{
+    font-size:17px;
+} 
+
+.finished{
+    padding-top: 80px;
+    flex-grow: 1;
+}
+
+.notFinished{
+    padding-top: 80px;
+    flex-grow: 1;
+}
+
+.tasks{
+    display: flex;
 }

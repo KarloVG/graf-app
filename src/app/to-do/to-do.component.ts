@@ -15,10 +15,16 @@ import { ObjectUnsubscribedError } from 'rxjs';
 export class ToDoComponent implements OnInit {
 
   displayedColumns: string[] = ['select','id','text','action'];
+  displayFinished: string[] = ['id', 'text', 'dateFinished', 'action'];
+  displayNotFinished: string[] = ['id', 'text', 'action'];
   dataSource = new MatTableDataSource<IToDo>();
+  finished: IToDo[] = [];
+  notFinished: IToDo[] = [];
   selection = new SelectionModel<IToDo>(true, []);
   exampleDatabase: ToDoService | null;
   toDos: IToDo[] = [];
+  data = Object.assign(this.toDos);
+  
 
   @ViewChild(MatTable, {static:true}) table: MatTable<any>
 
@@ -41,7 +47,28 @@ export class ToDoComponent implements OnInit {
 
   ngOnInit(): void {
     this.getToDoList();
+
+    }
+
+  deleteMany(){
+    const sel = this.selection.selected.length;
+    if(sel > 1){
+    this.selection.selected.forEach(item =>{
+      let index: number = this.data.findIndex(d => d === item);
+      console.log(this.data.findIndex(d => d === item));
+      this.data.splice(index,1)
+      this.toDoService.deleteToDo(item.id).subscribe(
+        result => {
+          console.log(result);
+          this.getToDoList();
+        }
+      )
+    });
+    this.selection = new SelectionModel<IToDo>(true, []);
   }
+  }
+  
+  //onemogućuje da označi CHECKBOX u tom stupcu
   onEvent(event){
     event.stopPropagation();
   }
@@ -65,7 +92,7 @@ export class ToDoComponent implements OnInit {
   editOrDelete(action, object){
     object.action = action;
     const dialogRef = this.dialog.open(ModalDeleteOrEditComponent, {
-      width: '300px',
+      width: '500px',
       height: '300px',
       data: object
     });
@@ -117,11 +144,11 @@ export class ToDoComponent implements OnInit {
     )
   }
 
-  deleteRowData(row_obj){
-    this.toDos = this.toDos.filter((value,key)=>{
-      return value.id != row_obj.id;
-    });
-  }
+  // deleteRowData(row_obj){
+  //   this.toDos = this.toDos.filter((value,key)=>{
+  //     return value.id != row_obj.id;
+  //   });
+  // }
 
   deleteRow(row){
     this.toDoService.deleteToDo(row.id).subscribe(

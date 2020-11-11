@@ -1,4 +1,6 @@
 export interface IToDo{
     id:number,
-    text:string
+    text:string,
+    isFinished: boolean,
+    dateFinished: Date|null
 }
