@@ -29,9 +29,17 @@
       <input placeholder="{{action}} Text" formControlName="text" required matInput [(ngModel)]="local_data.text">
       <mat-error *ngIf="text.invalid">{{getErrorMessage()}}</mat-error>
     </mat-form-field>
-    <!-- <div class="slide">
-      <mat-slide-toggle formControlName="isFinished">Finish this task?</mat-slide-toggle>
-    </div> -->
+    <mat-form-field appearance="fill" *ngIf = "action != 'Delete'">
+      <mat-label>Choose a date</mat-label>
+    <!-- #docregion toggle -->
+      <input matInput [matDatepicker]="picker">
+      <mat-datepicker-toggle matSuffix [for]="picker" [(ngModel)]="local_data.dateFinished"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    <!-- #enddocregion toggle -->
+    </mat-form-field>
+    <div class="slide" *ngIf = "action != 'Delete'">
+      <mat-slide-toggle formControlName="isFinished" [(ngModel)]="local_data.isFinished">Finish this task?</mat-slide-toggle>
+    </div>
     <ng-template #elseTemplate>
       Do you want to delete <b>{{local_data.text}}</b>?
     </ng-template>

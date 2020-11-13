@@ -43,8 +43,13 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { MatMomentDateModule, MomentDateAdapter } from "@angular/material-moment-adapter";
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { PortalModule } from '@angular/cdk/portal';
+import { OverlayModule } from '@angular/cdk/overlay';
+import { MatDividerModule } from '@angular/material/divider';
+import { CdkTreeModule } from '@angular/cdk/tree';
+import { A11yModule } from '@angular/cdk/a11y';
 
 @NgModule({
   declarations: [ToDoComponent, ModalDeleteOrEditComponent],
@@ -89,7 +94,16 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
     MatToolbarModule,
     MatTooltipModule,
     MatTreeModule,
-    MatNativeDateModule
+    A11yModule,
+    MatStepperModule,
+    CdkTreeModule,
+    CdkTreeModule,
+    MatDividerModule,
+    OverlayModule,
+    PortalModule,
+    ScrollingModule,
+    MatNativeDateModule,
+    
   ],
   exports:[
     MatCheckboxModule,

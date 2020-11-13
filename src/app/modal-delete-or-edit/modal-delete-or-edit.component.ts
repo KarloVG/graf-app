@@ -44,7 +44,8 @@ export class ModalDeleteOrEditComponent implements OnInit {
     this.textGroup = this.formBuilder.group({
       id:[''],
       text:['', Validators.required],
-      isFinished:[false]
+      isFinished:[''],
+      dateFinished:['']
     });
   }
 
@@ -55,6 +56,14 @@ export class ModalDeleteOrEditComponent implements OnInit {
 
   get text(): AbstractControl {
     return this.textGroup.get('text');
+  }
+
+  get isFinished(): AbstractControl {
+    return this.textGroup.get('isFinished');
+  }
+
+  get dateFinished(): AbstractControl {
+    return this.textGroup.get('dateFinished');
   }
 
 }

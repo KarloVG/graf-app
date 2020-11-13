@@ -12,6 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { InMemoryDataService } from './in-memory-data.service';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 @NgModule({
   declarations: [
@@ -29,9 +31,11 @@ import { MatDialogModule } from '@angular/material/dialog';
     InMemoryWebApiModule.forRoot(InMemoryDataService),
     FormsModule,
     ReactiveFormsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatNativeDateModule,
+    MatDatepickerModule
   ],
-  exports: [AppRoutingModule, RouterModule],
+  exports: [AppRoutingModule, RouterModule ],
   providers: [],
   bootstrap: [AppComponent]
 })

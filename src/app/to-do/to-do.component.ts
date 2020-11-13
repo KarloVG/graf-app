@@ -14,7 +14,7 @@ import { ObjectUnsubscribedError } from 'rxjs';
 })
 export class ToDoComponent implements OnInit {
 
-  displayedColumns: string[] = ['select','id','text','action'];
+  displayedColumns: string[] = ['select','id','text', 'isFinished', 'dateFinished','action'];
   displayFinished: string[] = ['id', 'text', 'dateFinished', 'action'];
   displayNotFinished: string[] = ['id', 'text', 'action'];
   dataSource = new MatTableDataSource<IToDo>();
@@ -89,14 +89,14 @@ export class ToDoComponent implements OnInit {
   //     }
   //   });
 
-  editOrDelete(action, object){
+  AddEditOrDelete(action, object){
     object.action = action;
     const dialogRef = this.dialog.open(ModalDeleteOrEditComponent, {
       width: '500px',
-      height: '300px',
+      height: '600px',
       data: object
     });
-  
+    
 
     dialogRef.afterClosed().subscribe(result => {
       if(result.event == 'Add'){

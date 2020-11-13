@@ -8,10 +8,10 @@ import { IToDo } from './interface/to-do';
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     const toDos = [
-      { id:1, text: 'Dr Nice' },
-      { id:2, text: 'Narco' },
-      { id:3, text: 'Barco' },
-      { id:4, text: 'Jarco' }
+      { id:1, text: 'Dr Nice', isFinished: true, dateFinished: null},
+      { id:2, text: 'Narco', isFinished: false, dateFinished: null },
+      { id:3, text: 'Barco', isFinished: false, dateFinished: null },
+      { id:4, text: 'Jarco', isFinished: true, dateFinished: null }
     ];
     return {toDos};
   }
