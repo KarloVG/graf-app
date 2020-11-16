@@ -65,7 +65,7 @@
 
       <ng-container matColumnDef="isFinished">
         <th mat-header-cell *matHeaderCellDef> Status </th>
-        <td mat-cell *matCellDef="let element"> {{element.isFinished}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.isFinished ? "Finished" : "Not finished"}} </td>
       </ng-container>
 
       <ng-container matColumnDef="dateFinished">
@@ -76,8 +76,8 @@
       <ng-container matColumnDef="action">
         <th mat-header-cell *matHeaderCellDef> Action </th>
         <td mat-cell *matCellDef="let element" class="action-link" (click)="onEvent($event)">
-          <button mat-raised-button class="editButton" (click)="AddEditOrDelete('Edit',element)">Edit</button> |
-          <button mat-raised-button color="warn" (click)="AddEditOrDelete('Delete',element)">Delete</button>
+          <button mat-raised-button class="editButton" (click)="AddEditOrDelete('Edit',element)">Edit</button> 
+          <!-- <button mat-raised-button color="warn" (click)="AddEditOrDelete('Delete',element)">Delete</button> -->
         </td>
       </ng-container>
 
@@ -112,7 +112,7 @@
         <h2 class="header2">Finished tasks</h2>
       </div>
       <div class="example-table-container">
-        <table mat-table [dataSource]="finished" class="example-table">
+        <table mat-table [dataSource]="finishedTasks" class="example-table">
 
           <ng-container matColumnDef="id">
             <th mat-header-cell *matHeaderCellDef> No. </th>
@@ -156,7 +156,7 @@
         <h2 class="header2">Not finished tasks</h2>
       </div>
       <div class="example-table-container">
-        <table mat-table [dataSource]="notFinished" class="example-table">
+        <table mat-table [dataSource]="notFinishedTasks" class="example-table">
 
           <ng-container matColumnDef="id">
             <th mat-header-cell *matHeaderCellDef> No. </th>

@@ -7,11 +7,12 @@ import { IToDo } from './interface/to-do';
 })
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
+    // koristi library moment.js "day-month-year"
     const toDos = [
-      { id:1, text: 'Dr Nice', isFinished: true, dateFinished: null},
+      { id:1, text: 'Dr Nice', isFinished: true, dateFinished: null}, // tu fali date
       { id:2, text: 'Narco', isFinished: false, dateFinished: null },
       { id:3, text: 'Barco', isFinished: false, dateFinished: null },
-      { id:4, text: 'Jarco', isFinished: true, dateFinished: null }
+      { id:4, text: 'Jarco', isFinished: true, dateFinished: null } // tu fali date
     ];
     return {toDos};
   }
